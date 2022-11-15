@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import styles from './Header.module.css'
+import Link from 'next/link'
 
 export default function Header() {
   const { pathname } = useRouter()
@@ -17,18 +18,18 @@ export default function Header() {
               (pathname === '/' ? styles.active + ' ' : '') + styles.li
             }
           >
-            <a className={styles.a} href={'/'}>
+            <Link className={styles.a} href={'/'}>
               Home
-            </a>
+            </Link>
           </li>
           <li
             className={
               (pathname === '/about' ? styles.active + ' ' : '') + styles.li
             }
           >
-            <a className={styles.a} href={'/about'}>
+            <Link className={styles.a} href={'/about'}>
               About
-            </a>
+            </Link>
           </li>
         </ul>
         <svg className={styles.svg} viewBox="0 0 2 3" aria-hidden="true">
