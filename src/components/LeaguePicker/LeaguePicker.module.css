@@ -1,0 +1,40 @@
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radioInput + * {
+  cursor: pointer;
+}
+
+.radioInputSeason + * {
+  background-color: #f1f1f1;
+  width: 5em;
+  height: 3rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;    
+}
+
+.submitButton {
+    background-color: #ff3e00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem auto;
+    margin-right: auto!;
+    margin-left: auto!;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
