@@ -24,6 +24,15 @@ export default function Header() {
           </li>
           <li
             className={
+              (pathname === '/discover' ? styles.active + ' ' : '') + styles.li
+            }
+          >
+            <Link className={styles.a} href={'/discover'}>
+              Discover
+            </Link>
+          </li>
+          <li
+            className={
               (pathname === '/about' ? styles.active + ' ' : '') + styles.li
             }
           >
