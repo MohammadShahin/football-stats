@@ -2,7 +2,7 @@ import { League } from '../types'
 
 const leagues: League[] = [
   {
-    id: "1",
+    id: '1',
     name: 'Premier League',
     country: 'England',
     logo: 'https://seeklogo.com/images/P/premier-league-new-logo-D22A0CE87E-seeklogo.com.png',
@@ -13,7 +13,7 @@ const leagues: League[] = [
     },
   },
   {
-    id: "2",
+    id: '2',
     name: 'La Liga',
     country: 'Spain',
     logo: 'https://seeklogo.com/images/P/premier-league-new-logo-D22A0CE87E-seeklogo.com.png',
@@ -24,7 +24,7 @@ const leagues: League[] = [
     },
   },
   {
-    id: "3",
+    id: '3',
     name: 'Bundesliga',
     country: 'Germany',
     logo: 'https://seeklogo.com/images/P/premier-league-new-logo-D22A0CE87E-seeklogo.com.png',
@@ -35,7 +35,7 @@ const leagues: League[] = [
     },
   },
   {
-    id: "4",
+    id: '4',
     name: 'Serie A',
     country: 'Italy',
     logo: 'https://seeklogo.com/images/P/premier-league-new-logo-D22A0CE87E-seeklogo.com.png',
@@ -46,7 +46,7 @@ const leagues: League[] = [
     },
   },
   {
-    id: "5",
+    id: '5',
     name: 'Ligue 1',
     country: 'France',
     logo: 'https://seeklogo.com/images/P/premier-league-new-logo-D22A0CE87E-seeklogo.com.png',
@@ -57,4 +57,7 @@ const leagues: League[] = [
     },
   },
 ]
+
+const A=10
+
 export { leagues }
