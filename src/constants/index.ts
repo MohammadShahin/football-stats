@@ -1,2 +1,2 @@
-export * from './leagues';
-export * from './seasons';
+export * from './leagues'
+export * from './seasons'
