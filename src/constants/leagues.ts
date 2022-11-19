@@ -58,6 +58,4 @@ const leagues: League[] = [
   },
 ]
 
-const A=10
-
 export { leagues }

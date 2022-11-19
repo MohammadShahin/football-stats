@@ -3,9 +3,6 @@ import type { AppProps } from 'next/app'
 import Layout from '../src/components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-  const fn = () => {}
-
   return (
     <Layout>
       <Component {...pageProps} />
