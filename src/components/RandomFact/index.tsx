@@ -24,9 +24,11 @@ export default function RandomFact() {
   if (!data) return <div>loading...</div>
 
   return (
-    <div>
-      {' '}
-      <span className={styles.mainFact}> {mainFact} </span> {factDetails}
+    <div className={styles.container}>
+      <p className={styles.title}>Random Football Fact</p>{' '}
+      <p>
+        <span className={styles.mainFact}> {mainFact} </span> {factDetails}
+      </p>
     </div>
   )
 }

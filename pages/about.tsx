@@ -18,7 +18,8 @@ export default function About() {
           Development course in Innopolis University. It is a simple web app
           built with Next JS. You can use this app to check out statistics about
           the top five European football leagues (England, Spain, Germany,
-          Italy, and France) and the Champoins League.
+          Italy, and France). You can also check out a random football facts in
+          the home page.
         </p>
 
         <p>
