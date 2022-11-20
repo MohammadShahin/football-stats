@@ -36,6 +36,9 @@ export default function About() {
             </li>
           </ul>
         </p>
+        <Link href="https://www.flaticon.com/free-icons" title="icons">
+          Flag icons credits
+        </Link>
       </div>
     </React.Fragment>
   )
