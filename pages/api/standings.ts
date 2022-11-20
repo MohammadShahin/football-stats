@@ -18,6 +18,10 @@ const leaguesStandings: { [key: string]: Data } = {
         team: 'what',
         points: 20,
       },
+      {
+        team: 'what',
+        points: 20,
+      },
     ],
   },
 }

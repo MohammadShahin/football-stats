@@ -1,4 +1,5 @@
 import { LeagueData } from '../../../types'
+import styles from './LeagueTable.module.css'
 
 interface LeagueTableProps {
   leagueData: LeagueData | null
@@ -7,7 +8,7 @@ interface LeagueTableProps {
 export default function LeagueTable({ leagueData }: LeagueTableProps) {
   if (!leagueData) return null
   return (
-    <table>
+    <table className={styles.leagueTable}>
       <thead>
         <tr>
           <th>Position</th>
