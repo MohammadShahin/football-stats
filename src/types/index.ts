@@ -27,4 +27,14 @@ interface Season {
   name: string
 }
 
-export type { LeagueData, League, Season }
+interface RandomFactResponse {
+  fact: string
+}
+
+interface LeagueWinner {
+  team: string
+  points: number
+  logo: string
+}
+
+export type { LeagueData, League, Season, RandomFactResponse, LeagueWinner }

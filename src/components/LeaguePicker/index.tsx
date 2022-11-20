@@ -86,7 +86,9 @@ export default function LeaguePicker() {
       {!!error && !loading && (
         <p className={styles.error}>Something went wrong</p>
       )}
-      {!error && !loading && <LeagueTable leagueData={leagueData} />}
+      {!error && !loading && leagueData && (
+        <LeagueTable leagueData={leagueData} />
+      )}
     </div>
   )
 }
