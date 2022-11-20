@@ -6,7 +6,7 @@ module.exports = {
       {
         protocol: 'https',
         hostname: 'dlskits.com',
-        port: '',
+        port: '*',
         pathname: '**',
       },
     ],
