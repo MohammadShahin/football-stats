@@ -41,7 +41,7 @@ export default function LeaguePicker() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <p>Choose a league to see the standings</p>
         <div className={styles.grid}>
           {leagues.map((league) => (
