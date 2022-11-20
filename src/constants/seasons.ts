@@ -1,4 +1,4 @@
-import { Season } from '../types'
+import { Season } from '../types';
 
 const seasons: Season[] = [
   {
@@ -17,6 +17,6 @@ const seasons: Season[] = [
     id: '4',
     name: '2022/2023',
   },
-]
+];
 
-export { seasons }
+export { seasons };

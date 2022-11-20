@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint ."
+    "export": "next export",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.10",
@@ -21,6 +25,7 @@
     "@types/react": "^18.0.25",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-next": "^13.0.3",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.2",

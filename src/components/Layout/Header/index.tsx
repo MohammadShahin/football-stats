@@ -1,10 +1,10 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import styles from './Header.module.css'
-import Link from 'next/link'
+import React from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import styles from './Header.module.css';
 
 export default function Header() {
-  const { pathname } = useRouter()
+  const { pathname } = useRouter();
 
   return (
     <header className={styles.header}>
@@ -15,28 +15,28 @@ export default function Header() {
         <ul className={styles.ul}>
           <li
             className={
-              (pathname === '/' ? styles.active + ' ' : '') + styles.li
+              (pathname === '/' ? `${styles.active} ` : '') + styles.li
             }
           >
-            <Link className={styles.a} href={'/'}>
+            <Link className={styles.a} href="/">
               Home
             </Link>
           </li>
           <li
             className={
-              (pathname === '/discover' ? styles.active + ' ' : '') + styles.li
+              (pathname === '/discover' ? `${styles.active} ` : '') + styles.li
             }
           >
-            <Link className={styles.a} href={'/discover'}>
+            <Link className={styles.a} href="/discover">
               Discover
             </Link>
           </li>
           <li
             className={
-              (pathname === '/about' ? styles.active + ' ' : '') + styles.li
+              (pathname === '/about' ? `${styles.active} ` : '') + styles.li
             }
           >
-            <Link className={styles.a} href={'/about'}>
+            <Link className={styles.a} href="/about">
               About
             </Link>
           </li>
@@ -46,5 +46,5 @@ export default function Header() {
         </svg>
       </nav>
     </header>
-  )
+  );
 }

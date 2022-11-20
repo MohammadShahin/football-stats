@@ -1,4 +1,4 @@
-import { League } from '../types'
+import { League } from '../types';
 
 const leagues: League[] = [
   {
@@ -56,6 +56,6 @@ const leagues: League[] = [
       lastYearWinner: '/api/winner?id=5',
     },
   },
-]
+];
 
-export { leagues }
+export { leagues };

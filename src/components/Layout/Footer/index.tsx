@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
-import styles from './Footer.module.css'
+import React from 'react';
+import Link from 'next/link';
+import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
@@ -12,5 +12,5 @@ export default function Footer() {
         </Link>
       </p>
     </footer>
-  )
+  );
 }

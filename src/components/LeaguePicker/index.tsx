@@ -1,53 +1,53 @@
-import React from 'react'
+import React from 'react';
 
-import { leagues, seasons } from '../../constants'
-import styles from './LeaguePicker.module.css'
-import LeagueTable from './LeagueTable'
-import { League, LeagueData, Season } from '../../types'
-import LeagueCard from './LeagueCard'
-import SeasonCard from './SeasonCard'
-import { getStandings } from '../../utils/fetchStandings'
+import { leagues, seasons } from '../../constants';
+import styles from './LeaguePicker.module.css';
+import LeagueTable from './LeagueTable';
+import { League, LeagueData, Season } from '../../types';
+import LeagueCard from './LeagueCard';
+import SeasonCard from './SeasonCard';
+import { getStandings } from '../../utils/fetchStandings';
 
 export default function LeaguePicker() {
   const [selectedLeague, setSelectedLeague] = React.useState<League | null>(
     null
-  )
+  );
   const [selectedSeason, setSelectedSeason] = React.useState<Season | null>(
     null
-  )
-  const [leagueData, setLeagueData] = React.useState<LeagueData | null>(null)
+  );
+  const [leagueData, setLeagueData] = React.useState<LeagueData | null>(null);
 
-  const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState('')
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState('');
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
 
     // @todo: add validation modal or error message
-    if (!selectedLeague || !selectedSeason) return
-    setLoading(true)
+    if (!selectedLeague || !selectedSeason) return;
+    setLoading(true);
     try {
       const newLeagueData: LeagueData = await getStandings(
         selectedLeague,
         selectedSeason
-      )
-      setLeagueData(newLeagueData)
+      );
+      setLeagueData(newLeagueData);
     } catch {
-      setError('Something went wrong')
+      setError('Something went wrong');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div>
       <form className={styles.form} onSubmit={handleSubmit}>
         <p>Choose a league to see the standings</p>
-        <div className={styles.grid}>
+        <div className="grid">
           {leagues.map((league) => (
-            <label key={'league-' + league.id}>
+            <label key={`league-${league.id}`}>
               <input
-                className={styles.radioInput + ' ' + styles.radioInputLeague}
+                className={`${styles.radioInput} ${styles.radioInputLeague}`}
                 type="radio"
                 checked={selectedLeague?.id === league.id}
                 onChange={() => setSelectedLeague(league)}
@@ -62,11 +62,11 @@ export default function LeaguePicker() {
 
         <br />
         <p>Choose the season you would like to discover</p>
-        <div className={styles.grid}>
+        <div className="grid">
           {seasons.map((season) => (
-            <label key={'season-' + season.id}>
+            <label key={`season-${season.id}`}>
               <input
-                className={styles.radioInput + ' ' + styles.radioInputSeason}
+                className={`${styles.radioInput} ${styles.radioInputSeason}`}
                 type="radio"
                 checked={selectedSeason?.id === season.id}
                 onChange={() => setSelectedSeason(season)}
@@ -90,5 +90,5 @@ export default function LeaguePicker() {
         <LeagueTable leagueData={leagueData} />
       )}
     </div>
-  )
+  );
 }

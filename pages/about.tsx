@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import React from 'react'
+import Head from 'next/head';
+import Link from 'next/link';
+import React from 'react';
 
 export default function About() {
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>About</title>
         <meta name="description" content="About this app" />
@@ -41,6 +41,6 @@ export default function About() {
           Flag icons credits
         </Link>
       </div>
-    </React.Fragment>
-  )
+    </>
+  );
 }

@@ -1,12 +1,12 @@
-import { LeagueData } from '../../../types'
-import styles from './LeagueTable.module.css'
+import { LeagueData } from '../../../types';
+import styles from './LeagueTable.module.css';
 
 interface LeagueTableProps {
-  leagueData: LeagueData | null
+  leagueData: LeagueData | null;
 }
 
 export default function LeagueTable({ leagueData }: LeagueTableProps) {
-  if (!leagueData) return null
+  if (!leagueData) return null;
   return (
     <table className={styles.leagueTable}>
       <thead>
@@ -18,13 +18,13 @@ export default function LeagueTable({ leagueData }: LeagueTableProps) {
       </thead>
       <tbody>
         {leagueData.standings.map((standing, index) => (
-          <tr key={standing.team}>
+          <tr key={standing.name}>
             <td>{index + 1}</td>
-            <td>{standing.team}</td>
+            <td>{standing.name}</td>
             <td>{standing.points}</td>
           </tr>
         ))}
       </tbody>
     </table>
-  )
+  );
 }
