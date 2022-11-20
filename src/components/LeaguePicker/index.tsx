@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { leagues, seasons } from '../../constants';
 import styles from './LeaguePicker.module.css';
 import LeagueTable from './LeagueTable';
@@ -23,8 +24,24 @@ export default function LeaguePicker() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // @todo: add validation modal or error message
-    if (!selectedLeague || !selectedSeason) return;
+    if (!selectedLeague) {
+      toast('Please select a league', {
+        position: 'top-right',
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        type: 'error',
+      });
+      return;
+    }
+    if (!selectedSeason) {
+      toast('Please pick a season');
+      return;
+    }
+
     setLoading(true);
     try {
       const newLeagueData: LeagueData = await getStandings(
@@ -41,6 +58,18 @@ export default function LeaguePicker() {
 
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <form className={styles.form} onSubmit={handleSubmit}>
         <p>Choose a league to see the standings</p>
         <div className="grid">
