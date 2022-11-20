@@ -38,7 +38,16 @@ export default function LeaguePicker() {
       return;
     }
     if (!selectedSeason) {
-      toast('Please pick a season');
+      toast('Please pick a season', {
+        position: 'top-right',
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        type: 'error',
+      });
       return;
     }
 

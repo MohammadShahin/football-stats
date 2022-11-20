@@ -4,7 +4,7 @@ import React from 'react';
 import { RandomFactResponse } from '../../types';
 import styles from './RandomFact.module.css';
 
-const RANDOM_FACT_URL = '/api/random_fact';
+const RANDOM_FACT_URL = '/api/random-fact';
 
 export default function RandomFact() {
   async function fetcher(url: string): Promise<RandomFactResponse> {
