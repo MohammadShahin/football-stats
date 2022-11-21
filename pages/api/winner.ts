@@ -1,38 +1,26 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, onValue } from 'firebase/database';
 import { TeamWithPoints } from '../../src/types';
+
+const firebaseConfig = {
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: 'football-stats-e2dd2.firebaseapp.com',
+  databaseURL: 'https://football-stats-e2dd2-default-rtdb.firebaseio.com',
+  projectId: 'football-stats-e2dd2',
+  storageBucket: 'football-stats-e2dd2.appspot.com',
+  messagingSenderId: '417343238913',
+  appId: '1:417343238913:web:db32b17beaa51344992100',
+  measurementId: 'G-5EYGHLJ6KJ',
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
 type Data = TeamWithPoints;
 type ErrorMessage = {
   message: string;
-};
-
-const leagueLastChampions: { [key: string]: Data } = {
-  1: {
-    name: 'Manchester City',
-    points: 93,
-    logo: 'https://dlskits.com/wp-content/uploads/2018/05/Manchester-City-Logo-for-Dream-League-Soccer.png',
-  },
-  2: {
-    name: 'Real Madrid',
-    points: 86,
-    logo: 'https://dlskits.com/wp-content/uploads/2018/05/Real-Madrid-Logo-Dream-League-Soccer.png',
-  },
-  3: {
-    name: 'Bayern Munich',
-    points: 77,
-    logo: 'https://dlskits.com/wp-content/uploads/2018/05/Bayern-Munich-Logo-for-Dream-League-Soccer.png',
-  },
-  4: {
-    name: 'AC Milan',
-    points: 86,
-    logo: 'https://dlskits.com/wp-content/uploads/2018/02/AC-Milan-Dream-League-Soccer-Logo-2017-18.png',
-  },
-  5: {
-    name: 'Paris Saint-Germain',
-    points: 86,
-    logo: 'https://dlskits.com/wp-content/uploads/2018/05/Paris-Saint-Germain-PSG-for-Dream-League-Soccer.png',
-  },
 };
 
 export default function handler(
@@ -41,12 +29,12 @@ export default function handler(
 ) {
   if (req.method === 'GET') {
     const leagueId = req.query.id;
-    if (
-      leagueId &&
-      typeof leagueId === 'string' &&
-      leagueLastChampions[leagueId]
-    ) {
-      res.status(200).json(leagueLastChampions[leagueId]);
+    if (leagueId && typeof leagueId === 'string') {
+      const winnerRef = ref(db, `winners/${leagueId}`);
+      onValue(winnerRef, (snapshot) => {
+        const data = snapshot.val();
+        res.status(200).json(data);
+      });
     } else {
       res.status(400).json({ message: 'Bad request' });
     }
