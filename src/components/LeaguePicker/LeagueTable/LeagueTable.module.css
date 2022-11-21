@@ -18,7 +18,21 @@
 .leagueTable th,
 .leagueTable td {
   padding: 1rem 1.2rem;
-  text-align: center;
+}
+
+.leagueTable td:first-child {
+  height: 2rem;
+  line-height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.leagueTable td:first-child * {
+  margin: .5rem;
+}
+
+.leagueTable td:first-child span:first-child {
+  width: 2rem !important;
 }
 
 .leagueTable tbody tr {

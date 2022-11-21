@@ -4,7 +4,13 @@ import { League, TeamWithPoints } from '../types';
 
 function fetcher(...leagues: League[]): Promise<TeamWithPoints[]> {
   async function singleFetcher(league: League): Promise<TeamWithPoints> {
-    return axios.get(league.apiUrls.lastYearWinner).then((res) => res.data);
+    return axios
+      .get(league.apiUrls.lastYearWinner, {
+        params: {
+          id: league.id,
+        },
+      })
+      .then((res) => res.data);
   }
   return Promise.all(leagues.map(singleFetcher));
 }

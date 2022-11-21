@@ -102,16 +102,16 @@ export default function LeaguePicker() {
         <p>Choose the season you would like to discover</p>
         <div className="grid">
           {seasons.map((season) => (
-            <label key={`season-${season.id}`}>
+            <label key={`season-${season.name}`}>
               <input
                 className={`${styles.radioInput} ${styles.radioInputSeason}`}
                 type="radio"
-                checked={selectedSeason?.id === season.id}
+                checked={selectedSeason?.id === season.name}
                 onChange={() => setSelectedSeason(season)}
               />
               <SeasonCard
                 season={season}
-                isActive={selectedSeason?.id === season.id}
+                isActive={selectedSeason?.name === season.name}
               />
             </label>
           ))}

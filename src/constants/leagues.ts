@@ -8,8 +8,8 @@ const leagues: League[] = [
     logo: '/leagues/premier-league.png',
     flag: '/flags/england.png',
     apiUrls: {
-      standings: '/api/standings?id=1',
-      lastYearWinner: '/api/winner?id=1',
+      standings: '/api/standings',
+      lastYearWinner: '/api/winner',
     },
   },
   {
@@ -19,8 +19,8 @@ const leagues: League[] = [
     logo: '/leagues/la-liga.png',
     flag: '/flags/spain.png',
     apiUrls: {
-      standings: '/api/standings?id=2',
-      lastYearWinner: '/api/winner?id=2',
+      standings: '/api/standings',
+      lastYearWinner: '/api/winner',
     },
   },
   {
@@ -30,8 +30,8 @@ const leagues: League[] = [
     logo: '/leagues/bundesliga.png',
     flag: '/flags/germany.png',
     apiUrls: {
-      standings: '/api/standings?id=3',
-      lastYearWinner: '/api/winner?id=3',
+      standings: '/api/standings',
+      lastYearWinner: '/api/winner',
     },
   },
   {
@@ -41,8 +41,8 @@ const leagues: League[] = [
     logo: '/leagues/serie-a.png',
     flag: '/flags/italy.png',
     apiUrls: {
-      standings: '/api/standings?id=4',
-      lastYearWinner: '/api/winner?id=4',
+      standings: '/api/standings',
+      lastYearWinner: '/api/winner',
     },
   },
   {
@@ -52,8 +52,8 @@ const leagues: League[] = [
     logo: '/leagues/ligue-1.png',
     flag: '/flags/france.png',
     apiUrls: {
-      standings: '/api/standings?id=5',
-      lastYearWinner: '/api/winner?id=5',
+      standings: '/api/standings',
+      lastYearWinner: '/api/winner',
     },
   },
 ];
