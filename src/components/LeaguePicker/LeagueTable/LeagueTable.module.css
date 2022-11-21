@@ -28,7 +28,7 @@
 }
 
 .leagueTable td:first-child * {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .leagueTable td:first-child span:first-child {
