@@ -5,7 +5,7 @@ import SeasonWinnerCard from './SeasonWinnerCard';
 export default function LastSeasonWinners() {
   const { data: lastSeasonWinners, error } = useLastSeasonWinners(leagues);
 
-  if (error) return <div>failed to load</div>;
+  if (error) return <div data-testid="failed">failed to load</div>;
   if (!lastSeasonWinners) return <div>loading...</div>;
 
   return (

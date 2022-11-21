@@ -22,8 +22,8 @@ export default function RandomFact() {
       setFactDetails(data.fact.substring(splitted[0].length + 1));
     }
   }, [data]);
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (error) return <div data-testid="failed">failed to load</div>;
+  if (!data) return <div data-testid="loader">loading...</div>;
 
   return (
     <div className={styles.container}>

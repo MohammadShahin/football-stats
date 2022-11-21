@@ -1,11 +1,11 @@
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LeagueCard from 'src/components/LeaguePicker/LeagueCard';
 import { leagues, seasons } from '../../constants';
 import styles from './LeaguePicker.module.css';
 import LeagueTable from './LeagueTable';
 import { League, LeagueData, Season } from '../../types';
-import LeagueCard from './LeagueCard';
 import SeasonCard from './SeasonCard';
 import { getStandings } from '../../utils/fetchStandings';
 
